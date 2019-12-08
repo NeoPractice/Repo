@@ -1,3 +1,57 @@
 Request:
 
 <?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.w3.org/2001/XMLSchema">
+ <xs:element name="Request">
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element name="App-Data">
+     <xs:element name="Client">
+      <xs:complexType>
+       <xs:sequence>
+        <xs:element name="UNI">
+         <xs:complexType>
+          <xs:sequence>
+           <xs:attribute name="Globalid" type="xs:string" use="required"/>
+           <xs:attribute name="System" type="xs:string" use="required"/>
+           <xs:attribute name="Type" type="xs:string" use="required"/>
+           <xs:attribute name="Number" type="xs:string" use="required"/>
+          </xs:sequence>
+         </xs:complexType>
+        </xs:element>
+        <xs:element name="Identification">
+         <xs:complexType>
+           <xs:element name="Idlist">
+            <xs:complexType>
+              <xs:element name="IdntRecord" maxOccurs="unbounded" minOccurs="0">
+               <xs:complexType>
+               <xs:sequence>
+                <xs:attribute name="Status" type="xs:string" use="required"/>
+                <xs:attribute name="System" type="xs:string" use="required"/>
+                <xs:attribute name="OrgUnit" type="xs:string" use="required"/>
+                <xs:attribute name="Id" type="xs:string" use="required"/>
+               </xs:sequence>
+               </xs:complexType>
+              </xs:element>
+            </xs:complexType>
+           </xs:element>
+         </xs:complexType>
+        </xs:element>
+       </xs:sequence>
+      </xs:complexType>
+     </xs:element>
+    </xs:element>
+     <xs:complexType>
+     <xs:sequence>
+      <xs:attribute name="Type" type="xs:string" use="required"/>
+      <xs:attribute name="CIMVersion" type="xs:string"/>
+      <xs:attribute name="ObjectType" type="xs:string"/>
+     </xs:sequence>
+   </xs:complexType>
+   <xs:element name="NotClosed">
+     <xs:attribute name="Value" type="xs:string" use="required"/>
+   </xs:element>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+</xs:schema>
