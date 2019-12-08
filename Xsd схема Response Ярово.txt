@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <xs:element name="Response">
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element name="Bis-Data"/>
+    <xs:element name="App-Data">
+     <xs:complexType>
+      <xs:element name="Response">
+       <xs:complexType>
+        <xs:element name="ObjectList">
+         <xs:complexType>
+          <xs:sequence>
+           <xs:element name="AccountList"/>
+           <xs:element name="LoanList"/>
+           <xs:element name="LoanApplicationList"/>
+           <xs:element name="DepositList">
+            <xs:complexType>
+             <xs:element name="Deposit" maxOccurs="unbounded">
+              <xs:complexType>
+               <xs:element name="DepositContract">
+                <xs:complexType>
+                 <xs:sequence>
+                  <xs:element name="Statu">
+                    <xs:attribute name="Value" type="string" use="required"/>
+                  </xs:element>
+                  <xs:element name="Number">
+                   <xs:attribute name="Value" type="string" use="required"/>
+                  </xs:element>
+                  <xs:element name="OpenDate">
+                    <xs:attribute name="Value" type="string" use="required"/>
+                  </xs:element>
+                  <xs:element name="EndDate">
+                   <xs:attribute name="Comment" type="string"/>
+                   <xs:attribute name="Value" type="string" use="required"/>
+                  </xs:element>
+                  <xs:element name="CloseDate">
+                    <xs:attribute name="Value" type="string" use="required">
+                     <xs:maxInclusive totalDigits="10"/>
+                    </xs:attribute>
+                  </xs:element>
+                  <xs:element name="Currency">
+                   <xs:attribute name="Value" type="string" use="required">
+                     <xs:maxInclusive totalDigits="3"/>
+                    </xs:attribute>
+                  </xs:element>
+                  <xs:element name="Period">
+                   <xs:attribute name="Unit" type="string" use="required"/>
+                   <xs:attribute name="Value" type="integer" use="required"/>
+                  </xs:element>
+                 </xs:sequence>
+                </xs:complexType>
+               </xs:element>
+              </xs:complexType>
+             <xs:attribute name="Value" type="string" use="required"/>
+             </xs:element>
+            </xs:complexType>
+           </xs:element>
+          </xs:sequence>
+         </xs:complexType>
+         <xs:attribute name="CifId" type="xs:string"/>
+        </xs:element>
+       </xs:complexType>
+      </xs:element>
+      <xs:attribute name="ResultCode" type="integer" use="required"/>
+      <xs:attribute name="ErrorString" type="integer"/>
+     </xs:complexType>
+    </xs:element>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+</xs:schema>
