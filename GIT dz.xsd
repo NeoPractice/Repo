@@ -159,6 +159,36 @@
 														<xs:annotation>
 															<xs:documentation>Элемент списка депозитов</xs:documentation>
 														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Deposit" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Элемент депозита</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="DepositContract">
+																				<xs:annotation>
+																					<xs:documentation>Блок данных договора</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:attribute name="Value" use="required">
+																						<xs:annotation>
+																							<xs:documentation>Вид депозит/счет</xs:documentation>
+																						</xs:annotation>
+																						<xs:simpleType>
+																							<xs:restriction base="xs:string">
+																								<xs:pattern value="Для вклада физ лица возвращается «Deposit»"/>
+																							</xs:restriction>
+																						</xs:simpleType>
+																					</xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
 													</xs:element>
 												</xs:sequence>
 												<xs:attribute name="cifID" type="xs:string" use="optional">
