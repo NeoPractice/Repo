@@ -120,6 +120,37 @@
 						<xs:documentation>Блок служебной транспортной информации исходного запроса. Используется шиной для маршрутизации ответа.Содержание блока описывается в отдельной документации.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
+				<xs:element name="App-Data">
+					<xs:annotation>
+						<xs:documentation>Охватывающий блок прикладных данных исходного запроса.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Response">
+								<xs:annotation>
+									<xs:documentation>блок ответа</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="ResultCode" use="required">
+										<xs:annotation>
+											<xs:documentation>Код результата</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:integer">
+												<xs:pattern value=""/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="ErrorString" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>Сообщение об ошибке</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
