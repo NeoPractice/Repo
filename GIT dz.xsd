@@ -172,6 +172,125 @@
 																					<xs:documentation>Блок данных договора</xs:documentation>
 																				</xs:annotation>
 																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="Status">
+																							<xs:annotation>
+																								<xs:documentation>Состояние</xs:documentation>
+																							</xs:annotation>
+																							<xs:complexType>
+																								<xs:attribute name="Value" type="xs:string" use="required">
+																									<xs:annotation>
+																										<xs:documentation>Состояние</xs:documentation>
+																									</xs:annotation>
+																								</xs:attribute>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="Number">
+																							<xs:annotation>
+																								<xs:documentation>Номер договора</xs:documentation>
+																							</xs:annotation>
+																							<xs:complexType>
+																								<xs:attribute name="Value" type="xs:string" use="required">
+																									<xs:annotation>
+																										<xs:documentation>Номер договора</xs:documentation>
+																									</xs:annotation>
+																								</xs:attribute>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="OpenDate">
+																							<xs:annotation>
+																								<xs:documentation>Дата открытия договора</xs:documentation>
+																							</xs:annotation>
+																							<xs:complexType>
+																								<xs:attribute name="Value" type="xs:string">
+																									<xs:annotation>
+																										<xs:documentation>Дата открытия договора</xs:documentation>
+																									</xs:annotation>
+																								</xs:attribute>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="EndDate">
+																							<xs:annotation>
+																								<xs:documentation>Дата окончания договора</xs:documentation>
+																							</xs:annotation>
+																							<xs:complexType>
+																								<xs:attribute name="Comment" type="xs:string" use="optional">
+																									<xs:annotation>
+																										<xs:documentation>Комментарий</xs:documentation>
+																									</xs:annotation>
+																								</xs:attribute>
+																								<xs:attribute name="Value" use="required">
+																									<xs:annotation>
+																										<xs:documentation>Дата в формате «гггг-мм-дд»</xs:documentation>
+																									</xs:annotation>
+																									<xs:simpleType>
+																										<xs:restriction base="xs:string">
+																											<xs:pattern value="Может быть пустой"/>
+																										</xs:restriction>
+																									</xs:simpleType>
+																								</xs:attribute>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="CloseDate">
+																							<xs:annotation>
+																								<xs:documentation>Датазакрытия договора</xs:documentation>
+																							</xs:annotation>
+																							<xs:complexType>
+																								<xs:attribute name="Value" use="required">
+																									<xs:annotation>
+																										<xs:documentation>Дата в формате «гггг-мм-дд»</xs:documentation>
+																									</xs:annotation>
+																									<xs:simpleType>
+																										<xs:restriction base="xs:string">
+																											<xs:maxLength value="10"/>
+																											<xs:pattern value="Может быть пустой"/>
+																										</xs:restriction>
+																									</xs:simpleType>
+																								</xs:attribute>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="Period">
+																							<xs:annotation>
+																								<xs:documentation>Срок вклада</xs:documentation>
+																							</xs:annotation>
+																							<xs:complexType>
+																								<xs:attribute name="Unit" use="required">
+																									<xs:annotation>
+																										<xs:documentation>Единица измерения</xs:documentation>
+																									</xs:annotation>
+																									<xs:simpleType>
+																										<xs:restriction base="xs:string">
+																											<xs:pattern value="«Day», «year» или «mounth»"/>
+																											<xs:enumeration value=""/>
+																										</xs:restriction>
+																									</xs:simpleType>
+																								</xs:attribute>
+																								<xs:attribute name="Value" type="xs:int">
+																									<xs:annotation>
+																										<xs:documentation>Срок вклада в заданных единицах изменения  </xs:documentation>
+																									</xs:annotation>
+																								</xs:attribute>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="Currency">
+																							<xs:annotation>
+																								<xs:documentation>Валюта депозита</xs:documentation>
+																							</xs:annotation>
+																							<xs:complexType>
+																								<xs:simpleContent>
+																									<xs:extension base="xs:string">
+																										<xs:attribute name="Value" use="required">
+																											<xs:simpleType>
+																												<xs:restriction base="xs:string">
+																													<xs:maxLength value="3"/>
+																												</xs:restriction>
+																											</xs:simpleType>
+																										</xs:attribute>
+																									</xs:extension>
+																								</xs:simpleContent>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
 																					<xs:attribute name="Value" use="required">
 																						<xs:annotation>
 																							<xs:documentation>Вид депозит/счет</xs:documentation>
