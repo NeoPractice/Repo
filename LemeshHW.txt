@@ -112,3 +112,112 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    <xs:element name="Response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Bis-Data">
+                    <xs:annotation>
+                        <xs:documentation>Блок служебной транспортной информации исходного запроса. Используется шиной для маршрутизации ответа.Содержание блока описывается в отдельной документации.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="App-Data">
+                    <xs:annotation>
+                        <xs:documentation>Охватывающий блок прикладных данных исходного запроса.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Response">
+                                <xs:annotation>
+                                    <xs:documentation>блок ответа</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ObjectList">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ObjectList" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Элемент прикладных данных ответа</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="AccountList" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Элемент списка счетов</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="LoanList" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Элемент списка кредитов</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="LoanApplicationList" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Элемент списка </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="DepositList" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Элемент списка депозитов</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="Deposit" minOccurs="0">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Элемент депозита</xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="DepositContract">
+                                                                                <xs:annotation>
+                                                                                    <xs:documentation>Блок данных договора</xs:documentation>
+                                                                                </xs:annotation>
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="Status">
+                                                                                            <xs:annotation>
+                                                                                                <xs:documentation>Состояние</xs:documentation>
+                                                                                            </xs:annotation>
+                                                                                            <xs:complexType>
+                                                                                                <xs:attribute name="Value" type="xs:string" use="required">
+                                                                                                    <xs:annotation>
+                                                                                                        <xs:documentation>Состояние</xs:documentation>
+                                                                                                    </xs:annotation>
+                                                                                                </xs:attribute>
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                        <xs:element name="Number">
+                                                                                            <xs:annotation>
+                                                                                                <xs:documentation>Номер договора</xs:documentation>
+                                                                                            </xs:annotation>
+                                                                                            <xs:complexType>
+                                                                                                <xs:attribute name="Value" type="xs:string" use="required">
+                                                                                                    <xs:annotation>
+                                                                                                        <xs:documentation>Номер договора</xs:documentation>
+                                                                                                    </xs:annotation>
+                                                                                                </xs:attribute>
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                        <xs:element name="OpenDate">
+                                                                                            <xs:annotation>
+                                                                                                <xs:documentation>Дата открытия договора</xs:documentation>
+                                                                                            </xs:annotation>
+                                                                                            <xs:complexType>
+                                                                                                <xs:attribute name="Value" type="xs:string">
+                                                                                                    <xs:annotation>
+                                                                                                        <xs:documentation>Дата открытия договора</xs:documentation>
+                                                                                                    </xs:annotation>
+                                                                                                </xs:attribute>
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                        <xs:element name="EndDate">
+                                                                                            <xs:annotation>
+                                                                                                <xs:documentation>Дата окончания договора</xs:documentation>
+                                                                                            </xs:annotation>
+                                                                                            <xs:complexType>
+                                                                                                <xs:attribute name="Comment" type="xs:string" use="optional">
+                                                                                                    <xs:annotation>
+                                                                                                        <xs:documentation>Комментарий</xs:documentation>
+                                                                                                    </xs:annotation>
+                                                                                                </xs:attribute>
+                                                                                                <xs:attribute name="Value" use="required">
+                                                                                                    <xs:annotation>
