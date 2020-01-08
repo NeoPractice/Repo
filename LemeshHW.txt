@@ -1,1 +1,118 @@
-schema
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+
+
+    <Bis-Data>
+    </Bis-Data>
+
+    <App-Data>
+        <Response>
+        </Response>
+    </App-Data>
+
+    <ResultCode>
+    </ResultCode>
+    <ErrorString>
+    </ErrorString>
+    <ObjectList>
+        <cifID>
+        </cifID>
+        <AccountList>
+        </AccountList>
+        <LoanList>
+        </LoanList>
+        <LoanApplicationList>
+        </LoanApplicationList>
+        <DepositList>
+            <Deposit>
+                <Value>
+                </Value>
+                <DepositContract>
+                    <Status>
+                        <Value>
+                        </Value>
+                    </Status>
+                    <Number>
+                        <Value>
+                        </Value>
+                    </Number>
+                    <OpenDate>
+                        <Value>
+                        </Value>
+                    </OpenDate>
+                    <EndDate>
+                        <Comment>
+                        </Comment>
+                        <Value>
+                        </Value>
+                    </EndDate>
+                    <CloseDate>
+                        <Value>
+                        </Value>
+                    </CloseDate>
+                    <Currency>
+                        <Value>
+                        </Value>
+                    </Currency>
+                    <Period>
+                        <Unit>
+                        </Unit>
+                        <Value>
+                        </Value>
+                    </Period>
+                </DepositContract>
+            </Deposit>
+        </DepositList>
+    </ObjectList>
+
+
+</Response>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Request>
+    <App-Data>
+        <Type>
+        </Type>
+        <CIMVersion>
+        </CIMVersion>
+        <ObjectType>
+        </ObjectType>
+        <Client>
+            <UNI>
+                <Globalid>
+                </Globalid>
+                <System>
+                </System>
+                <Type>
+                </Type>
+                <Number>
+                </Number>
+            </UNI>
+            <Identification>
+                <IdntList>
+                    <IdntRecord>
+                        <Status>
+                        </Status>
+                        <System>
+                        </System>
+                        <OrgUnit>
+                        </OrgUnit>
+                        <Id>
+                        </Id>
+                    </IdntRecord>
+
+                </IdntList>
+            </Identification>
+
+        </Client>
+
+    </App-Data>
+    <NotClosed>
+        <Value>
+        </Value>
+    </NotClosed>
+
+</Request>
+
+
+
